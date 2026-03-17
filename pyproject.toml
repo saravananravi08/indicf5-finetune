@@ -1,0 +1,53 @@
+[project]
+name = "indicf5-finetune"
+version = "0.1.0"
+description = "Fine-tune IndicF5 TTS for Hindi-English (Hinglish) code-switched speech"
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+license = { text = "MIT" }
+
+dependencies = [
+    "torch>=2.2.0,<2.5",
+    "torchaudio>=2.2.0,<2.5",
+    "accelerate>=0.25.0",
+    "datasets>=2.16.0",
+    "ema-pytorch>=0.5.0",
+    "soundfile>=0.12.0",
+    "safetensors>=0.4.0",
+    "huggingface-hub>=0.20.0",
+    "numpy<=1.26.4",
+    "librosa>=0.10.0",
+    "cached-path>=1.6.0",
+    "click>=8.0",
+    "hydra-core>=1.3",
+    "jieba>=0.42",
+    "matplotlib>=3.7",
+    "pydub>=0.25",
+    "pypinyin>=0.51",
+    "torchdiffeq>=0.2.0",
+    "tqdm>=4.65",
+    "transformers>=4.40.0,<4.50.0",
+    "transformers-stream-generator>=0.0.4",
+    "vocos>=0.1.0",
+    "x-transformers>=1.30.0",
+]
+
+[project.optional-dependencies]
+wandb = ["wandb>=0.16.0"]
+dev = ["ruff", "pytest"]
+
+[project.scripts]
+prepare-data = "indicf5_finetune.prepare_data:main"
+train = "indicf5_finetune.train:main"
+evaluate = "indicf5_finetune.evaluate:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/indicf5_finetune", "src/f5_tts"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"

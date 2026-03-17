@@ -1,0 +1,44 @@
+{
+  "TAM_F_HAPPY_00001": {
+    "file": "TAM_F_HAPPY_00001.wav",
+    "name": "Tamil Female (Happy)",
+    "language": "Tamil",
+    "transcript": "நான் நெனச்ச மாதிரியே அமேசான்ல பெரிய தள்ளுபடி வந்திருக்கு, எனக்கு ரொம்ப சந்தோஷமா இருக்கு!"
+  },
+  "KAN_F_HAPPY_00001": {
+    "file": "KAN_F_HAPPY_00001.wav",
+    "name": "Kannada Female (Happy)",
+    "language": "Kannada",
+    "transcript": "ನಮ್\u200c ಫ್ರಿಜ್ಜಲ್ಲಿ  ಕೂಲಿಂಗ್\u200c ಸಮಸ್ಯೆ ಆಗಿ ನಾನ್\u200c ಭಾಳ ದಿನದಿಂದ ಕಾಯ್ತಿದ್ದೆ, ಈಗ ಸರಿ ಆಗಿದೆ ನನಗೆ ತುಂಬಾ ಖುಷಿ ಆಗಿದೆ!"
+  },
+  "MAR_F_HAPPY_00001": {
+    "file": "MAR_F_HAPPY_00001.wav",
+    "name": "Marathi Female (Happy)",
+    "language": "Marathi",
+    "transcript": "आमच्या कुटुंबाला या उत्पादनाने खूपच आनंद दिला आहे, मला खूप आनंद झाला!"
+  },
+  "MAR_F_WIKI_00001": {
+    "file": "MAR_F_WIKI_00001.wav",
+    "name": "Marathi Female (Wiki)",
+    "language": "Marathi",
+    "transcript": "दिगंतराव्दारे अंतराळ कक्षेतला कचरा चिन्हित करण्यासाठी प्रयत्न केले जात आहे."
+  },
+  "MAR_M_WIKI_00001": {
+    "file": "MAR_M_WIKI_00001.wav",
+    "name": "Marathi Male (Wiki)",
+    "language": "Marathi",
+    "transcript": "या प्रथाला एकोणीसशे पंचातर ईसवी पासून भारतीय दंड संहिताची धारा तीनशे दहा ते तीनशे अठरा अन्वये शिक्षापात्र गुन्हा ठरवण्यात आला."
+  },
+  "PAN_F_HAPPY_00001": {
+    "file": "PAN_F_HAPPY_00001.wav",
+    "name": "Punjabi Female (Happy)",
+    "language": "Punjabi",
+    "transcript": "ਇੱਕ ਗ੍ਰਾਹਕ ਨੇ ਸਾਡੀ ਬੇਮਿਸਾਲ ਸੇਵਾ ਬਾਰੇ ਦਿਲੋਂ ਗਵਾਹੀ ਦਿੱਤੀ ਜਿਸ ਨਾਲ ਸਾਨੂੰ ਅਨੰਦ ਮਹਿਸੂਸ ਹੋਇਆ।"
+  },
+  "PAN_F_HAPPY_00002": {
+    "file": "PAN_F_HAPPY_00002.wav",
+    "name": "Punjabi Female (Happy 2)",
+    "language": "Punjabi",
+    "transcript": "ਭਹੰਪੀ ਵਿੱਚ ਸਮਾਰਕਾਂ ਦੇ ਭਵਨ ਨਿਰਮਾਣ ਕਲਾ ਦੇ ਵੇਰਵੇ ਗੁੰਝਲਦਾਰ ਅਤੇ ਹੈਰਾਨ ਕਰਨ ਵਾਲੇ ਹਨ, ਜੋ ਮੈਨੂੰ ਖੁਸ਼ ਕਰਦੇ ਹਨ।"
+  }
+}
