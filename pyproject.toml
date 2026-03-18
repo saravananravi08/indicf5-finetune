@@ -30,10 +30,10 @@ dependencies = [
     "transformers-stream-generator>=0.0.4",
     "vocos>=0.1.0",
     "x-transformers>=1.30.0",
+    "wandb>=0.16.0",
 ]
 
 [project.optional-dependencies]
-wandb = ["wandb>=0.16.0"]
 dev = ["ruff", "pytest"]
 
 [project.scripts]

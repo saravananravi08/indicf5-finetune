@@ -76,15 +76,17 @@ def load_pretrained_weights(model: CFM, checkpoint_path: str, device: str = "cpu
     print(f"Loading pre-trained weights from {checkpoint_path} ...")
     state_dict = load_file(checkpoint_path, device=device)
 
-    # Strip "ema_model." prefix from keys
+    # Strip known prefixes from keys: ema_model., _orig_mod., vocoder.
     cleaned = {}
     for k, v in state_dict.items():
-        if k.startswith("ema_model."):
-            cleaned[k[len("ema_model."):]] = v
-        elif k.startswith("vocoder."):
+        key = k
+        # Strip all known prefixes (can be nested like ema_model._orig_mod.)
+        for prefix in ["ema_model.", "_orig_mod."]:
+            while key.startswith(prefix):
+                key = key[len(prefix):]
+        if key.startswith("vocoder."):
             continue
-        else:
-            cleaned[k] = v
+        cleaned[key] = v
 
     missing, unexpected = model.load_state_dict(cleaned, strict=False)
     if missing:
@@ -95,19 +97,6 @@ def load_pretrained_weights(model: CFM, checkpoint_path: str, device: str = "cpu
         print(f"  Unexpected keys: {len(unexpected)}")
         for k in unexpected[:5]:
             print(f"    {k}")
-
-    # Try alternative key mapping if too many missing
-    if len(missing) > 10:
-        print("  Trying alternative key mapping...")
-        alt_cleaned = {}
-        for k, v in state_dict.items():
-            for prefix in ["ema_model.", "model.", "_orig_mod.", ""]:
-                if k.startswith(prefix):
-                    alt_cleaned[k[len(prefix):]] = v
-                    break
-        missing2, _ = model.load_state_dict(alt_cleaned, strict=False)
-        if len(missing2) < len(missing):
-            print(f"  Alternative mapping: {len(missing2)} missing keys (better)")
 
     total_params = sum(p.numel() for p in model.parameters())
     print(f"  Model: {total_params/1e6:.1f}M params total")
@@ -182,7 +171,21 @@ def main():
                         help="Log audio samples during training")
     parser.add_argument("--seed", type=int, default=42,
                         help="Random seed for reproducibility")
+    parser.add_argument("--test-run", action="store_true",
+                        help="Quick smoke test: 1 epoch, save at step 2, small batch. Works on CPU.")
     args = parser.parse_args()
+
+    # Override settings for test run
+    if args.test_run:
+        args.epochs = 1
+        args.save_every = 2
+        args.warmup_steps = 2
+        args.no_wandb = True
+        args.batch_size = 9600  # ~2.5s of audio per batch
+        args.max_samples = 4
+        args.grad_accum = 1
+        args.num_workers = 1
+        print("\n*** TEST RUN MODE — 1 epoch, small batch, no wandb ***\n")
 
     data_dir = os.path.abspath(args.data_dir)
     ckpt_dir = os.path.abspath(args.checkpoint_dir)
