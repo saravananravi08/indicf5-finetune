@@ -45,32 +45,27 @@ INDICF5_MODEL_CFG = dict(
     conv_layers=4,
 )
 
-# Test sentences covering different language mixing patterns
+# Test sentences covering different language mixing patterns (longer for proper evaluation)
 TEST_SENTENCES = {
     "hindi_pure": [
-        "नमस्ते, आज का मौसम बहुत अच्छा है।",
-        "भारत एक विशाल देश है जहाँ अनेक भाषाएँ बोली जाती हैं।",
-        "कृपया अपना नाम और पता बताइए।",
+        "नमस्ते दोस्तों, आज का मौसम बहुत अच्छा है और मैं सोच रहा हूँ कि हम सब मिलकर पार्क में घूमने चलें, वहाँ बहुत अच्छा लगेगा।",
+        "भारत एक विशाल देश है जहाँ अनेक भाषाएँ बोली जाती हैं, हर राज्य की अपनी संस्कृति है, अपना खाना है, और अपनी परंपराएँ हैं जो इसे खास बनाती हैं।",
     ],
     "hinglish_light": [
-        "मैं आज office जा रहा हूँ, meeting है।",
-        "यह project बहुत important है, deadline कल है।",
-        "please मुझे email कर दीजिए, details भेज दूँगा।",
+        "मैं आज office जा रहा हूँ, morning में एक important meeting है और उसके बाद lunch break में team के साथ new project के बारे में discuss करना है।",
+        "यह project बहुत important है, deadline कल है और अभी तक testing complete नहीं हुई है, please सब लोग focus करो और अपना work जल्दी finish करो।",
     ],
     "hinglish_heavy": [
-        "basically मैं software engineer हूँ और machine learning पर काम करता हूँ।",
-        "actually यह algorithm बहुत complex है, but performance improve हो गई है।",
-        "server down है, database connection timeout हो रहा है, restart करो।",
+        "basically मैं एक software engineer हूँ और पिछले तीन साल से machine learning और artificial intelligence पर काम कर रहा हूँ, recently हमने एक new deep learning model deploy किया है जो बहुत अच्छा perform कर रहा है।",
+        "actually यह algorithm बहुत complex है, but जब से हमने optimization technique apply की है, performance काफी improve हो गई है, latency कम हो गई है और throughput भी बढ़ गया है।",
     ],
     "english_pure": [
-        "Hello, how are you doing today?",
-        "The weather is beautiful this morning.",
-        "Please send me the report by end of day.",
+        "Hello everyone, welcome to today's session. We're going to talk about the latest developments in artificial intelligence and how they are changing the way we work and live in our daily lives.",
+        "The weather has been absolutely beautiful this entire week. I've been going for long walks in the evening and enjoying the sunset by the lake near my house, it's really peaceful and calming.",
     ],
     "technical_hinglish": [
-        "इस function में input parameter pass करो और output check करो।",
-        "data preprocessing के बाद model training start करो।",
-        "API endpoint पर GET request भेजो और response parse करो।",
+        "इस function में पहले input parameter validate करो, फिर database से data fetch करो, उसके बाद response object create करके client को send कर दो, और अगर कोई error आए तो proper error handling करो।",
+        "deployment pipeline में पहले unit tests run होंगे, फिर docker image build होगी, उसके बाद staging environment में deploy होगा, और सब कुछ pass होने के बाद production में release करेंगे।",
     ],
 }
 
