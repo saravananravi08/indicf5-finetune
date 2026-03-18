@@ -188,9 +188,7 @@ class Trainer:
             self.optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
             if self.scheduler:
                 self.scheduler.load_state_dict(checkpoint["scheduler_state_dict"])
-            # step = checkpoint["step"]
-            # step = 0
-            # print("checkpoint step is: ", step, " CHANGE LINE 192 IN /projects/data/ttsteam/repos/f5/src/f5_tts/model/trainer.py TO FIX THIS!!!!")
+            step = checkpoint["step"]
         else:
             checkpoint["model_state_dict"] = {
                 k.replace("ema_model.", ""): v
